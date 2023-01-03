@@ -1,4 +1,10 @@
-import math
+"""Binary Search - search sorted list for target
+
+Time:  O(log n)
+
+Space: O(1)
+
+"""
 
 
 def binary_search(l: list[int], target: int) -> int:
