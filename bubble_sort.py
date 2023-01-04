@@ -1,3 +1,10 @@
+"""Bubble Sort - sorts a list of integers in ascending order.
+
+Time: O(n^2) for both swaps and comparisons
+
+Space: O(n) total and O(1) aux. n is the length of list.
+"""
+
 
 def bubble_sort(l: list[int]) -> None:
     """Basic in-place bubble sort"""
