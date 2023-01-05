@@ -1,12 +1,17 @@
 """Insertion Sort - sorts a list of integers in ascending order.
 
+Time: O(n^2)
+
+Space: O(n) total space and O(1) auxiliary space
 
 """
 
 
 def insertion_sort(l: list[int]):
     for i in range(1, len(l)):
-        curr = l[i]  # Element to insert
+        curr = l[i]
+
+        # Insert current element into sorted sub-array l[0:i-1]
         j = i - 1
         while j >= 0 and l[j] > curr:
             l[j+1] = l[j]
