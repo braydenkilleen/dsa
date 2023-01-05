@@ -1,8 +1,20 @@
+"""Insertion Sort - sorts a list of integers in ascending order.
+
+
+"""
+
+
 def insertion_sort(l: list[int]):
-    for i in range(2, len(l)):
-        key = l[i]
+    for i in range(1, len(l)):
+        curr = l[i]  # Element to insert
         j = i - 1
-        while j > 0 and l[j] > key:
+        while j >= 0 and l[j] > curr:
             l[j+1] = l[j]
-            j = j - 1
-        l[j+1] = key
+            j -= 1
+        l[j+1] = curr
+
+
+if __name__ == '__main__':
+    l = [31, 41, 59, 26, 51, 58]
+    insertion_sort(l)
+    assert l == [26, 31, 41, 51, 58, 59]
