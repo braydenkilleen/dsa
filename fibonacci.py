@@ -14,14 +14,6 @@ def inefficient_fibonacci(n):
     return inefficient_fibonacci(n-2) + inefficient_fibonacci(n-1)
 
 
-def iterative_fibonacci(n):
-    """Compute fibonacci iteratively"""
-    a, b = 0, 1
-    for _ in range(n-1):
-        a, b = b, a+b
-    return b
-
-
 def memo_fibonacci(n, memo={}):
     """Compute nth fibonacci using memoization to avoid repeated work.
 
@@ -35,6 +27,16 @@ def memo_fibonacci(n, memo={}):
         result = memo_fibonacci(n-1, memo) + memo_fibonacci(n-2, memo)
         memo[n] = result
     return result
+
+
+def iterative_fibonacci(n):
+    """Compute fibonacci iteratively. This is the optimal solution.
+
+    Time: O(n)"""
+    a, b = 0, 1
+    for _ in range(n-1):
+        a, b = b, a+b
+    return b
 
 
 if __name__ == '__main__':
