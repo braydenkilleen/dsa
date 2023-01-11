@@ -22,6 +22,17 @@ def iterative_fibonacci(n):
     return b
 
 
+def memo_fibonacci(n, memo={}):
+    if n <= 1:
+        return n
+    try:
+        result = memo[n]
+    except KeyError:
+        result = memo_fibonacci(n-1, memo) + memo_fibonacci(n-2, memo)
+        memo[n] = result
+    return result
+
+
 if __name__ == '__main__':
     # print(fibonacci(1))
     # print(fibonacci(2))
@@ -33,7 +44,12 @@ if __name__ == '__main__':
     # print(inefficient_fibonacci(3))
     # print(inefficient_fibonacci(4))
 
-    print(iterative_fibonacci(1))
-    print(iterative_fibonacci(2))
-    print(iterative_fibonacci(3))
-    print(iterative_fibonacci(4))
+    # print(iterative_fibonacci(1))
+    # print(iterative_fibonacci(2))
+    # print(iterative_fibonacci(3))
+    # print(iterative_fibonacci(4))
+
+    print(memo_fibonacci(1))
+    print(memo_fibonacci(2))
+    print(memo_fibonacci(3))
+    print(memo_fibonacci(4))
