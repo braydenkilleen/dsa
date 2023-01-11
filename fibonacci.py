@@ -23,6 +23,10 @@ def iterative_fibonacci(n):
 
 
 def memo_fibonacci(n, memo={}):
+    """Compute nth fibonacci using memoization to avoid repeated work.
+
+    Time: O(n)
+    """
     if n <= 1:
         return n
     try:
