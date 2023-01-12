@@ -1,3 +1,6 @@
+"""Object-Oriented graph implementation"""
+
+
 class Node:
 
     def __init__(self, val):
